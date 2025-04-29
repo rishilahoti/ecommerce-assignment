@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function WishlistPage() {
-    const { wishlist, removeFromWishlist } = useWishlist();
+    const { wishlist, toggleWishlist } = useWishlist();
 
     return (
         <div className="p-6 max-w-5xl mx-auto">
@@ -26,7 +26,7 @@ export default function WishlistPage() {
                                 <h2 className="font-semibold">{item.title}</h2>
                                 <p>${item.price}</p>
                             </div>
-                            <button onClick={() => removeFromWishlist(item.id)} className="text-red-500 font-semibold">
+                            <button onClick={() => toggleWishlist(item)} className="text-red-500 font-semibold">
                                 Remove
                             </button>
                         </div>
